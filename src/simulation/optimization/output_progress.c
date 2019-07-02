@@ -73,7 +73,7 @@ FILE* constructor_optimization_progress_file(struct Optimization_Case *optimizat
 	struct Simulation *sim = optimization_case->sim;
 
 	// Create the optimization convergence output file
-	char f_name[4*STRLEN_MAX] = { 0, };
+	char f_name[5*STRLEN_MAX+STRLEN_MIN+10] = { 0, };
 	sprintf(f_name,"%s%c%s%c%s", sim->pde_name,'/',sim->pde_spec,'/',optimization_case->optimizer_output_files_prefix);
 	strcat(f_name, "Optimization_Convergence.txt");
 
@@ -221,7 +221,7 @@ void output_NURBS_patch_information(struct Optimization_Case* optimization_case)
 
 	struct Simulation *sim = optimization_case->sim;
 
-	char f_name[4*STRLEN_MAX] = { 0, };
+	char f_name[5*STRLEN_MAX+STRLEN_MIN+10] = { 0, };
 	sprintf(f_name,"%s%c%s%c%s", sim->pde_name,'/',sim->pde_spec,'/',optimization_case->optimizer_output_files_prefix);
 	strcat(f_name, "Optimized_NURBS_Patch.txt");
 
@@ -335,7 +335,7 @@ void output_gradient(struct Optimization_Case* optimization_case,
 	struct Simulation *sim = optimization_case->sim;
 	int n_dof = optimization_case->num_design_pts_dofs; // length of gradient
 
-	char f_name[4*STRLEN_MAX] = { 0, };
+	char f_name[5*STRLEN_MAX+STRLEN_MIN+10] = { 0, };
 	sprintf(f_name,"%s%c%s%c%s", sim->pde_name,'/',sim->pde_spec,'/',optimization_case->optimizer_output_files_prefix);
 	strcat(f_name, "Objective_Gradient.txt");
 
@@ -364,7 +364,7 @@ void output_pressure_distribution(struct Optimization_Case* optimization_case){
 
 	struct Simulation *sim = optimization_case->sim;
 
-	char f_name[4*STRLEN_MAX] = { 0, };
+	char f_name[5*STRLEN_MAX+STRLEN_MIN+10] = { 0, };
 	sprintf(f_name,"%s%c%s%c%s", sim->pde_name,'/',sim->pde_spec,'/',optimization_case->optimizer_output_files_prefix);
 	strcat(f_name, "Pressure_Distribution.txt");
 
