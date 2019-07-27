@@ -45,7 +45,7 @@ class Gmsh_call:
 		out_dir = re.search(r"/(([\w-]+/)*)",mesh_name_full).group(0)
 		subprocess.call(shlex.split("mkdir -p " + out_dir))
 
-		subprocess.call(shlex.split("gmsh " + self.args))
+		subprocess.call(shlex.split("gmsh -format msh2 " + self.args))
 
 def set_gmsh_setnumbers (input_dir,mesh_name):
 	""" Set the -setnumber inputs to be passed to gmsh. """
